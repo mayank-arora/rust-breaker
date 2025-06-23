@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { JournalEntry } from "../../types";
+import "./Journal.css";
 
 interface NewEntryFormProps {
   onAddEntry: (entry: Omit<JournalEntry, "id" | "date">) => void;

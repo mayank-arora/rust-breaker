@@ -1,8 +1,8 @@
 .checklist-item {
   display: flex;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
+  padding: var(--spacing-2);
+  border-bottom: 1px solid var(--border-color);
   transition: background-color 0.2s;
 }
 
@@ -11,14 +11,14 @@
 }
 
 .checklist-item label {
-  margin-left: 10px;
-  color: #333;
+  margin-left: var(--spacing-2);
+  color: var(--text-color);
   transition: color 0.2s;
 }
 
 .checklist-item.completed label {
   text-decoration: line-through;
-  color: #aaa;
+  color: var(--muted-text-color);
 }
 
 .checklist-item input[type="checkbox"] {

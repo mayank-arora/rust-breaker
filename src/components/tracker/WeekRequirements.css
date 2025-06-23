@@ -1,23 +1,23 @@
 .week-requirements {
-  margin: 20px auto;
-  padding: 15px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  margin: var(--spacing-4) auto;
+  padding: var(--spacing-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   max-width: 500px;
-  background-color: #fafafa;
+  background-color: var(--surface-color);
 }
 
 .week-requirements h3 {
   margin-top: 0;
-  color: #333;
+  color: var(--text-color);
 }
 
 .week-requirements ul {
   list-style-type: '✅ ';
-  padding-left: 20px;
+  padding-left: var(--spacing-4);
 }
 
 .week-requirements li {
-  margin-bottom: 8px;
-  color: #555;
-} 
+  margin-bottom: var(--spacing-2);
+  color: var(--muted-text-color);
+}

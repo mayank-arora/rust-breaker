@@ -1,6 +1,6 @@
 import React from "react";
 import { JournalEntry as JournalEntryType } from "../../types";
-import "./JournalEntry.css";
+import "./Journal.css";
 
 interface JournalEntryProps {
   entry: JournalEntryType;

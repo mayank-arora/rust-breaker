@@ -1,9 +1,9 @@
 .tracker-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  gap: var(--spacing-2);
   max-width: 500px;
-  margin: 20px auto;
+  margin: var(--spacing-4) auto;
 }
 
 .day-square {
@@ -12,22 +12,22 @@
   align-items: center;
   width: 60px;
   height: 60px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 
 .day-square.incomplete {
-  background-color: #f0f0f0;
-  color: #888;
+  background-color: var(--surface-color);
+  color: var(--muted-text-color);
 }
 
 .day-square.completed {
-  background-color: #4caf50;
-  color: white;
-  border-color: #4caf50;
+  background-color: var(--success-color);
+  color: var(--surface-color);
+  border-color: var(--success-color);
 }
 
 .day-square:hover {
