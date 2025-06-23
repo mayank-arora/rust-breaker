@@ -1,0 +1,23 @@
+.week-requirements {
+  margin: 20px auto;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  max-width: 500px;
+  background-color: #fafafa;
+}
+
+.week-requirements h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.week-requirements ul {
+  list-style-type: '✅ ';
+  padding-left: 20px;
+}
+
+.week-requirements li {
+  margin-bottom: 8px;
+  color: #555;
+} 
