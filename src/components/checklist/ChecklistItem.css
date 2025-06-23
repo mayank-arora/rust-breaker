@@ -1,0 +1,28 @@
+.checklist-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.checklist-item label {
+  margin-left: 10px;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.checklist-item.completed label {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.checklist-item input[type="checkbox"] {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+} 
