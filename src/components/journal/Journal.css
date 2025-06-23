@@ -1,0 +1,102 @@
+/* Journal.css */
+.journal-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.journal-list {
+  margin-top: 30px;
+}
+
+/* NewEntryForm.css */
+.new-entry-form {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.new-entry-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-height: 80px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.mood-selector {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.mood-selector div {
+  display: flex;
+  gap: 5px;
+}
+
+.mood-selector button {
+  background: none;
+  border: 2px solid transparent;
+  font-size: 1.8rem;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mood-selector button.active {
+  border-color: #007bff;
+  background-color: #e7f3ff;
+}
+
+.new-entry-form > button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* JournalEntry.css */
+.journal-entry {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.mood-emoji {
+  font-size: 1.5rem;
+}
+
+.entry-content h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.entry-content p {
+  margin-top: 0;
+  margin-bottom: 15px;
+  white-space: pre-wrap;
+  color: #333;
+} 
