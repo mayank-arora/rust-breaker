@@ -8,33 +8,51 @@ export interface TrackerDay {
     completed: boolean;
 }
 
-const initializeTrackerData = (): TrackerDay[] => {
-    const storedData = loadFromStorage<TrackerDay[]>(TRACKER_STORAGE_KEY);
+interface TrackerData {
+    days: TrackerDay[];
+    startDate: string;
+}
+
+const initializeTrackerData = (): TrackerData => {
+    const storedData = loadFromStorage<TrackerData | TrackerDay[]>(TRACKER_STORAGE_KEY);
+
     if (storedData) {
-        return storedData;
+        // Check if it's the old format (just an array)
+        if (Array.isArray(storedData)) {
+            return {
+                days: storedData,
+                startDate: new Date().toISOString(),
+            };
+        }
+        // It's the new format
+        return storedData as TrackerData;
     }
 
     const totalDays = 30;
-    return Array.from({ length: totalDays }, (_, i) => ({
-        day: i + 1,
-        completed: false,
-    }));
+    return {
+        days: Array.from({ length: totalDays }, (_, i) => ({
+            day: i + 1,
+            completed: false,
+        })),
+        startDate: new Date().toISOString(),
+    };
 };
 
 export const useTracker = () => {
-    const [days, setDays] = useState<TrackerDay[]>(initializeTrackerData());
+    const [trackerData, setTrackerData] = useState<TrackerData>(initializeTrackerData());
 
     useEffect(() => {
-        saveToStorage(TRACKER_STORAGE_KEY, days);
-    }, [days]);
+        saveToStorage(TRACKER_STORAGE_KEY, trackerData);
+    }, [trackerData]);
 
     const markDayAsComplete = (day: number) => {
-        setDays((prevDays) =>
-            prevDays.map((d) =>
+        setTrackerData((prevData) => ({
+            ...prevData,
+            days: prevData.days.map((d) =>
                 d.day === day ? { ...d, completed: !d.completed } : d
-            )
-        );
+            ),
+        }));
     };
 
-    return { days, markDayAsComplete };
+    return { ...trackerData, markDayAsComplete };
 };

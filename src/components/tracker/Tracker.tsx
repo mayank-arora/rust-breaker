@@ -4,13 +4,19 @@ import DaySquare from "./DaySquare";
 import "./Tracker.css";
 import WeekRequirements from "./WeekRequirements";
 
-// This function will eventually get the real current day.
-// For now, we can change it to test different weeks.
-const getCurrentDay = () => 1;
+const getDayDifference = (startDate: string) => {
+  const start = new Date(startDate);
+  const today = new Date();
+  start.setHours(0, 0, 0, 0);
+  today.setHours(0, 0, 0, 0);
+  const diffTime = Math.abs(today.getTime() - start.getTime());
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  return diffDays + 1; // Day 1 is the start date
+};
 
 const Tracker: React.FC = () => {
-  const { days, markDayAsComplete } = useTracker();
-  const currentDay = getCurrentDay();
+  const { days, startDate, markDayAsComplete } = useTracker();
+  const currentDay = getDayDifference(startDate);
 
   return (
     <div>
